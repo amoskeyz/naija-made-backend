@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate:undo": "npx sequelize db:migrate:undo",
     "migrate": "npx sequelize db:migrate",
-    "dev": "cross-env NODE_ENV=development nodemon --watch src --exec babel-node src/server.js"
+    "dev": "cross-env NODE_ENV=development nodemon --watch src --exec babel-node src/server.js",
+    "start": "cross-env NODE_ENV=production rimraf dist/ && babel ./src -d dist && node dist/server.js",
+    "build": "rimraf dist/ && babel ./src -d dist"
   },
   "repository": {
     "type": "git",
