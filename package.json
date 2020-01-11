@@ -1,0 +1,53 @@
+{
+  "name": "naija-made-backend",
+  "version": "1.0.0",
+  "description": "Backend for an e-commerce naija app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate:undo": "npx sequelize db:migrate:undo",
+    "migrate": "npx sequelize db:migrate",
+    "dev": "cross-env NODE_ENV=development nodemon --watch src --exec babel-node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amoskeyz/naija-made-backend.git"
+  },
+  "author": "Amos Oruaroghene",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amoskeyz/naija-made-backend/issues"
+  },
+  "homepage": "https://github.com/amoskeyz/naija-made-backend#readme",
+  "dependencies": {
+    "@hapi/joi": "^16.1.8",
+    "@sendgrid/mail": "^6.4.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "chalk": "^3.0.0",
+    "cloudinary": "^1.18.1",
+    "consola": "^2.11.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6",
+    "indicative": "^7.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^7.14.0",
+    "pg-hstore": "^2.3.3",
+    "pusher": "^3.0.0",
+    "sequelize": "^5.21.3",
+    "sequelize-cli": "^5.5.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/node": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/preset-env": "^7.7.6",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1"
+  }
+}
