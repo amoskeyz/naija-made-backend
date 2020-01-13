@@ -50,10 +50,13 @@ dbconnection
       consola.success(chalk.yellow(`server start at port ${process.env.PORT}`));
     });
   })
-  .catch((e) => {
+  .catch((e, res) => {
     /* istanbul ignore next */
     console.log(e);
-    throw e.message;
+    // throw e.message;
+    return res.status(400).json({
+      e
+    });
   });
 
 export default app;
