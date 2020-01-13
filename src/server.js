@@ -52,6 +52,7 @@ dbconnection
   })
   .catch((e) => {
     /* istanbul ignore next */
+    console.log(e);
     throw e.message;
   });
 
