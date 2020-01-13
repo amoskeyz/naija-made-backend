@@ -8,8 +8,9 @@
     "migrate:undo": "npx sequelize db:migrate:undo",
     "migrate": "npx sequelize db:migrate",
     "dev": "cross-env NODE_ENV=development nodemon --watch src --exec babel-node src/server.js",
-    "start": "cross-env NODE_ENV=production rimraf dist/ && babel ./src -d dist && node dist/server.js",
-    "build": "rimraf dist/ && babel ./src -d dist"
+    "start": "babel-node src/server.js",
+    "build": "rimraf dist/ && babel ./src -d dist",
+    "heroku-postbuild": " npm run migrate"
   },
   "repository": {
     "type": "git",
