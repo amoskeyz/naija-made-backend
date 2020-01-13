@@ -41,22 +41,25 @@ app.use((error, req, res) => res.status(500).json({
   error
 }));
 
-const dbconnection = db.sequelize;
-dbconnection
-  .authenticate()
-  .then(() => {
-    consola.success(chalk.blue('connection to database successful'));
-    app.listen(process.env.PORT, () => {
-      consola.success(chalk.yellow(`server start at port ${process.env.PORT}`));
-    });
-  })
-  .catch((e, res) => {
-    /* istanbul ignore next */
-    console.log(e);
-    // throw e.message;
-    return res.status(400).json({
-      e
-    });
-  });
+// const dbconnection = db.sequelize;
+// dbconnection
+//   .authenticate()
+//   .then(() => {
+//     consola.success(chalk.blue('connection to database successful'));
+//     app.listen(process.env.PORT, () => {
+//       consola.success(chalk.yellow(`server start at port ${process.env.PORT}`));
+//     });
+//   })
+// .catch((e, res) => {
+//   /* istanbul ignore next */
+//   console.log(e);
+//   // throw e.message;
+//   return res.status(400).json({
+//     e
+//   });
+// });
+const server = app.listen(process.env.PORT || 3000, () => {
+  console.log(`Listening on port ${server.address().port}`);
+});
 
 export default app;
