@@ -10,7 +10,7 @@
     "dev": "cross-env NODE_ENV=development nodemon --watch src --exec babel-node src/server.js",
     "start": "babel-node src/server.js",
     "build": "rimraf dist/ && babel ./src -d dist",
-    "heroku-postbuild": " npm run migrate"
+    "heroku-postbuild": " npm run migrate:undo && npm run migrate"
   },
   "repository": {
     "type": "git",
@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/amoskeyz/naija-made-backend#readme",
   "dependencies": {
-    "@babel/cli": "^7.8.0",
-    "@babel/core": "^7.8.0",
-    "@babel/node": "^7.8.0",
-    "@babel/plugin-transform-runtime": "^7.8.0",
-    "@babel/preset-env": "^7.8.2",
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/node": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
     "@hapi/joi": "^16.1.8",
     "@sendgrid/mail": "^6.4.0",
     "bcryptjs": "^2.4.3",
